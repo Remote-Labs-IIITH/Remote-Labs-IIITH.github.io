@@ -1,0 +1,491 @@
+:root{
+  --primary: #FFCE00;
+  --secondary: #FE4880;
+  --gradient: linear-gradient(
+      337deg,
+      #664AFF,
+      #9e4aff,
+      #bd8af7
+  )
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  html,body{
+    display: contents;
+    /* height:110%;
+    width: 150%; */
+    min-height: 100vh;
+    text-align: center;
+    place-items: center;
+    background: linear-gradient(90deg, #052e6c,#481e48);
+  }
+
+
+  h1 {
+    font-family: 'Poppins',sans-serif;
+    position: relative;
+    left: 24px;
+    top: -5px;
+    font-size: 15px;
+    text-align: left;
+    font-weight: bold;
+    color: rgb(230, 230, 230);
+    cursor:default;
+    transition: all 0.2s ease-out;
+  }
+  h1:hover {
+    color: #ccc;
+  }
+
+
+  h2 {
+    font-family: 'Poppins',sans-serif;
+    position: relative;
+    left: 24px;
+    top: -5px;
+    font-size: 15px;
+    text-align: left;
+    font-weight: bold;
+    color: rgb(230, 230, 230);
+    padding-top: 10px;
+    cursor:default;
+    transition: all 0.2s ease-out;
+  }
+  h2:hover {
+    color: #ccc;
+  }
+
+  .navbar{
+    overflow: hidden;
+    background-color: #664AFF;
+    position: fixed;
+    display: block;
+    top: 0px;
+    right: 0px;
+    width: 99vw;
+    height: 70px;
+    z-index: 3;
+  }
+  
+  .navbar a{
+    display: block;
+    position: relative;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 16px;
+    text-decoration: none;
+  }
+  #focal_head{
+    line-height: 1.2;
+    font-size: 300%;
+    font-family: "Bebas Neue", cursive;
+    float: left;
+  }
+  #demo{
+    overflow: hidden;
+    font-size: 200%;
+    font-family: "Poppins",sans-serif;
+    float: right;
+    top: 5%;
+    right: 3%;
+  }
+
+  #session{
+    font-size: 120%;
+    font-family: "Poppins",sans-serif;
+    background-image: var(--gradient);
+    top: 20%;
+    right: 1%;
+    padding: 0px 10px 0px 10px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    color: #fff;
+    line-height: 2;
+    float: right;
+    cursor:pointer;
+
+  }
+
+.servos .contents .chart {
+  position: absolute;
+  padding: 10px;
+  /* top: 380px;*/
+  left: 9vw;
+  width: 650px;
+  height: 320px;
+  background-color: #ccc;
+  border-radius: 10px;
+  z-index: 4;
+  margin: auto;
+}
+.servos {
+  position: absolute;
+  display: block;
+  top:10vh;
+  bottom: 0;
+  left: 0;
+  right: 0;
+    
+  margin: auto;
+  width: 90vw;
+  height: 710px;
+  /* background-color: #fff; */
+  background: rgba(175, 193, 230, 0.25);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 11px );
+  -webkit-backdrop-filter: blur( 11px );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border-radius: 10px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: block;
+  top: 0px;
+  left: 22px;
+  width: 80px;
+  height: 45px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0px;
+  left: 0;
+  right: 2px;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 40px;
+  width: 40px;
+  left: 2.2px;
+  bottom: 2px;
+  background-color: white;
+  box-shadow: 2px 1px 3px rgba(110, 110, 110, 0.75);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #75c764;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #54b441;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(33px);
+  -ms-transform: translateX(33px);
+  transform: translateX(33px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 36px;
+}
+
+#power{
+  visibility: hidden;
+}
+
+#power_head{
+  visibility: hidden;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.feed{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  outline: none;
+  top: 0.1vh;
+}
+
+.stream{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  outline: none;
+  margin: 10px auto 10px;
+  height: 355px;
+  width: 680px;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 10;
+  padding: 16px 30px;
+  color: #664AFF;
+
+  background: rgba(167, 176, 194, 0.45);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 11px );
+  -webkit-backdrop-filter: blur( 11px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  z-index: 2;
+}
+
+.stream .live1{
+  position: relative;
+  top: -10px;
+  margin: auto;
+  border-radius: 10px;
+  z-index: 4;
+}
+
+
+.stream .live2{
+  position: relative;
+  top: -10px;
+  margin: auto;
+  border-radius: 10px;
+  z-index: 4;
+}
+
+.contents {
+  position: relative;
+  display: grid;
+  outline: none;
+  top: -250px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  margin: auto 60px 60px 60px;
+  width: 40vw;
+  height: 325px;
+  position: absolute;
+  right: -2vw;
+  border-radius: 20px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+  width: 100px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+  width: 100px;
+}
+tr:nth-child(odd) {
+  background-color: rgb(173, 193, 199);
+}
+#feedback {
+	float: left;
+	position: fixed;
+	top: calc(75%);
+	right: 0;
+}
+
+#feedback a {
+	background: #FF4500;
+	border-radius: 5px 0 0 5px;
+	box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+	border: 3px solid #fff;
+	border-right: 0;
+	display: block;
+	padding: 20px 12px;
+	transition: all .2s ease-in-out;
+}
+
+#feedback a:hover {
+	padding-right: 20px;
+}
+
+
+
+
+
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 90px;
+  left: 20px;
+
+  z-index: 4;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: #232323;
+
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+  color: tomato;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: linear-gradient(90deg,#b4b4b4, #ffff);
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#inst {
+  display: block;
+  position: absolute;
+  top: 120px;
+  left: 8px;
+  z-index: 3;
+  color: #ededed;
+  font-family: 'Poppins',sans-serif;
+  font-size: 10px;
+  font-weight: bolder;
+}
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: linear-gradient(to bottom left, var(--primary) 10%, var(--secondary) 115%);;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu {
+  position: absolute;
+  width: 100vw;
+  height: 80vh;
+  margin: 0px 0 0 -20px;
+  padding: 50px;
+  padding-top: 125px;
+
+  background: #ededed;
+  list-style-type : disc;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+/* #menu li {
+  padding: 10px 0;
+  font-size: 22px;
+} */
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+
+#menu li{
+  position: relative;
+  top: -40px;
+  font-family: 'Roboto',sans-serif;
+  text-align: left;
+  font-size: 20px;
+  padding: 20px;
+}
+#menu h2{
+  font-family: 'Poppins',sans-serif;
+  font-size: 30px;
+  font-weight: 1000;
+  line-height: 3;
+  margin-bottom: 40px;
+  color: #ededed;
+  text-align: center;
+}
+.up_half{
+  position: relative;
+  border-bottom-right-radius: 50%;
+  top: -125px;
+  width: 100vw;
+  height: 100px;
+  margin: 0 0 0 -50px;
+  background: linear-gradient(to bottom left, var(--primary) 10%, var(--secondary) 115%);;
+}

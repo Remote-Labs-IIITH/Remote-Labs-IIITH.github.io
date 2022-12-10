@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard | Vanishing Rod </title>
+    <script src="script.js"></script>
+    <script src="timer.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+    
+    <style>
+		/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap'); */
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@800;900&family=Poppins:wght@200&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=The+Nautigal:wght@400;700&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Raleway:wght@100;200&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
+	</style>
+  <script>
+    jQuery(document).ready(function ($) {
+
+        if (window.history && window.history.pushState) {
+
+            window.history.pushState('forward', null, './#forward');
+
+            $(window).on('popstate', function () {
+                sessionStorage.removeItem("saved_countdown");
+                location.href = '../home_page/home.html'
+                // fetch("https://blynk.cloud/external/api/update?token=xhn8z8fVu6weEbbHIgVNjmQ4waWrX6Xm&v1=1")
+                fetch("https://blr1.blynk.cloud/external/api/update?token=xhn8z8fVu6weEbbHIgVNjmQ4waWrX6Xm&v3=0")
+
+            });
+
+        }
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        if(typeof sessionStorage.getItem('uid') === 'object'){
+            location.href = '../sign_in/sign_in.html'
+        }
+
+        if(sessionStorage.getItem('tried_Exp') == 0){
+            sessionStorage.removeItem("saved_countdown");
+            location.href = '../home_page/home.html'
+        }
+
+        });
+</script>
+
+    <link rel="stylesheet" href="vanish.css">
+ 
+</head>
+
+<body>
+    <nav role="navigation">
+        <div id="menuToggle">
+
+            <input type="checkbox" />
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <ul id="menu">
+                <div class="up_half"><h2>How to use this dashboard</h2></div>
+                
+                <li>Use the Up and Down arrows in the control widget to control the position of the glass rods. 
+                    You can do this multiple times to see the rod vanishing in the left beaker container sunflower oil while it remains clrealy visible in the tight beaker containging warter.</li>
+                
+                <li>You can click the Recalibrate Button to reset the setup to default state. After you are done with the experiment,
+                    click the "leave session" button on the top right corner to exit the session. This will redirect you to thr home page.
+                </li>
+                     <br/>
+                <li>
+                    <strong>Note: There's a latency of about 5-10 seconds in video feed.</strong>
+                </li>
+            </ul>
+        </div>
+        <label id="inst">Instructions</label>
+    </nav><br />
+
+
+    <div class="stream">
+        <label id="pc1"></label>
+        <!-- <iframe id="live1" class="live1" width="540" height="220" title="YouTube video player" frameborder="0"
+            allow="autoplay"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe> -->
+            <iframe width="540" height="220" id="live" class="live"
+            src="https://www.youtube.com/embed/ZvVYw05tKGg?&autoplay=1" title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+            picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <script type="module" src="video.js"></script>
+    <div>
+        <nav class="navbar">
+            <a id="focal_head" href="#focal">Vanishing Rod</a>
+            <a id="session" type="button" onclick="leave()">Leave Session</a>
+            <a id="demo"></a>
+        </nav>
+    </div>
+   
+ 
+<div class="range1">                                  
+   
+    <div class="field1">
+        
+        
+       
+        
+    </div>
+    <button type="button" onclick='Down()' class="btn_down" id="btn_down">Down</button>
+    <button type="button" onclick='Up()' class="btn_up" id="btn_up">Up</button>
+     
+</div>
+
+<!--<div class="ctrls">
+    <button type="button" class="btn-1" onclick='myfunction()' id="bt1">Recalibrate</button>
+
+</div>
+-->
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+</script>
+    <script src="script.js">
+
+    </script>
+</body>
+
+</html>

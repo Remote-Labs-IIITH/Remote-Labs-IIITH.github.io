@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vanish | Instructions </title>
+    <!-- <script src="script.js"></script> -->
+    <!-- <script src="timer.js"></script> -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap');
+    </style>
+    <!-- <script>
+        //check for Navigation Timing API support
+        if (window.performance) {
+            console.info("window.performance works fine on this browser");
+        }
+        console.info(performance.navigation.type);
+        if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+            console.info("This page is reloaded");
+        } else {
+            console.info("This page is not reloaded");
+        }
+    </script> -->
+    <link rel="stylesheet" href="theory.css">
+    <script>
+        function return_dashboard() {
+            location.href = 'vanish.html'
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a id="focal_head" href="#focal">Remote Triggered Lab</a>
+        <button id="Leave_Queue" onclick="return_dashboard()">Back to Dashboard</button>
+    </nav>
+
+    <div class="card" id="fl">
+        <div class="card__inner" id="fl_in">
+            <div class="card__face card__face--back">
+                <div class="card__content">
+                    <div class="card__header">
+                        <h2>Conservation Of Energy</h2>
+                    </div>
+                    <div class="card__body">
+                        <h3>Aim</h3>
+                        <p>To show that sum of potential and kinetic energies of a moving object at various observation points in a track are almost equal.</p><br />
+                        <h3>Apparatus</h3>
+                        <p>
+                        <ul>
+                            <li>
+                                Roller coaster track
+                            </li>
+                            <li>
+                                IR sensors
+                            </li>
+                            <li>
+                                Servo motors
+                            </li>
+                            <li>
+                                Raspberry Pi Microcontroller
+                            </li>
+                        </ul>
+                        </p><br />
+                        <h3>Physics of the Experiment</h3>
+                        <p>The main physics behind the experiment can be summarized as:</p>
+                        <p>According to the law of conservation of energy, energy can neither be created nor destroyed - only converted from one form to another. Thus, a system always has the same amount of energy unless an external force is applied. The primary two types of energy are:
+                        </p>
+                        
+                        <ul>
+                            <li>
+                                Potential energy (PE)
+                            </li>
+                            <li>
+                                Kinetic energy (KE)
+                            </li>
+                        </ul>
+                        <p>When there are no external forces, $$TE = PE + KE = constant$$ at any point on the track.</p>
+                        <img src="RollerCoaster.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

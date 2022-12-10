@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Young's Double Slit </title>
+    <script src="script.js"></script>
+    <script src="timer.js"></script>
+
+    <style>
+		/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap'); */
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@800;900&family=Poppins:wght@200&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=The+Nautigal:wght@400;700&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Raleway:wght@100;200&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
+	</style>
+    <script>
+        jQuery(document).ready(function ($) {
+    
+            if (window.history && window.history.pushState) {
+    
+                window.history.pushState('forward', null, './#forward');
+    
+                $(window).on('popstate', function () {
+                    sessionStorage.removeItem("saved_countdown");
+                    location.href = '../home_page/home.html'
+                    fetch("https://blynk.cloud/external/api/update?token=ilEv4NM3BlZSMolddR7EsuurFMx6DR5a&v5=0")
+                });
+    
+            }
+        });
+    </script>
+    <script></script>
+    <link rel="stylesheet" href="young.css">
+   
+</head>
+<body>
+
+    <div>
+        <nav class="navbar">
+            <a id="focal_head" href="#focal">Young's Double Slit</a>
+            <a id="session" type="button" onclick="leave()">Leave Session</a>
+            <a id="demo"></a>
+        </nav>
+    </div>
+    <nav role="navigation">
+        <div id="menuToggle">
+
+            <input type="checkbox" />
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <ul id="menu">
+                <div class="up_half"><h2>How to use this dashboard</h2></div>
+                <li><strong>Overview</strong></li>
+                <li> Set up the experiment by selecting wire-width in the blynk control
+                    page. The wireframe will adjust it's position in front of the laser to
+                    keep the selected wire in the center of the light source.</li>
+                
+                <li>You can observe that as you select the parameter, the actuators in the
+                    backend will move the wireframe and the fringe pattern will change
+                    accordingly.
+                </li>
+                <li>
+                    Make measurements using your mouse pointer by noting down the
+                    coordinates and calculating the distances.
+                </li>
+                <li><strong>Reload Plot to check the changes in the interactive plot.</strong></li>
+                     <br/>
+                <li>
+                    <strong>Analysis</strong>
+                </li>
+                <li>Using the calculated distances, use the formula to get the wire width.
+                    Compare the wire width that you got with the true value. Perform this
+                    experiment atleast 5 times. Calculate error, mean and standard
+                    deviation of your values. Report the error.</li>
+            </ul>
+        </div>
+        <label id="inst">Instructions</label>
+    </nav><br />
+
+    
+    <div class="stream">
+        <iframe id="str" class="live" width="800" height="600" frameborder="0" scrolling="no" src="https://chart-studio.plotly.com/~rajsinghparihar_/4.embed?showlink=false"></iframe>
+    </div>    
+
+    <div class="range1">
+        <div class="slidervalue1">
+            <span id="us">0</span>
+        </div>
+
+        <div class="field1">
+            <div class="value left">Up</div>
+            <input type="range" min="0" max="1" value="0" step="1" id="u">
+            <div class="value right">Down</div>
+            <div class="u_label" id="u_label" data-hover="Object"><span></span></div>
+        </div>
+        <button type="button" onclick='increment("u")' class="btn_plus" id="btn_plus1">▼</button>
+        <button type="button" onclick='decrement("u")' class="btn_minus" id="btn_minus1">▲</button>
+        <button type="button" class="btn-1" onclick='myfunction()' id="bt1">Recalibrate</button>
+    </div>
+        
+        
+        <!-- <button type="button" class="btn-1" onclick="location.reload(true)" id="bt1">Reload Plot</button>
+
+        
+        <div class="range">
+            
+        <div class="slideContainer">
+          
+            <div class="field">
+            
+            <div class="value left">0&deg;</div>
+            <input type="range" min="0;" max="180"  value="0" step="1" id="myRange" class="slider" list="tickmarks" oninput="show_value(this.value)"> 
+            <input type="range" min="0;" max="180"  value="0" step="1" id="myRange" class="slider" oninput="output.value= show_value(myRange.value)"> 
+            <div class="value right">180&deg;</div>
+          
+        </div>
+    </br>
+    
+        <p>Value: <span id="value" style="color:rgb(8, 175, 204);font-weight:bold;">0&deg;</span></p>
+    </div>
+       </div>
+       
+      
+     <div class="info">
+        <strong>Place the slider at 35&deg; (or) 90&deg; (or) 160&deg;,to observe the pattern on the interactive plot.
+            Reload the plot for every change of the slider value.
+        </strong>
+     </div>   -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+    </script>
+        <script src="script.js">
+        </script>
+        
+</body>
+</html>

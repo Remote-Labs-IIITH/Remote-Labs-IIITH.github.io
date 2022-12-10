@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard | Vanishing Rods </title>
+    <link rel="stylesheet" href="vanish.css">
+    <script src="vanish.js"></script>
+    <script src="timer.js"></script>
+    <!-- <script src="video.js"></script> -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+    <style>
+		/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap'); */
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@800;900&family=Poppins:wght@200&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=The+Nautigal:wght@400;700&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Raleway:wght@100;200&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
+	</style>
+    <script>
+        jQuery(document).ready(function ($) {
+    
+            if (window.history && window.history.pushState) {
+    
+                window.history.pushState('forward', null, './#forward');
+    
+                $(window).on('popstate', function () {
+                    sessionStorage.removeItem("saved_countdown");
+                    location.href = '../home_page/home.html'
+                    // fetch("https://blynk.cloud/external/api/update?token=xhn8z8fVu6weEbbHIgVNjmQ4waWrX6Xm&v1=1")
+                    fetch("https://blr1.blynk.cloud/external/api/update?token=xhn8z8fVu6weEbbHIgVNjmQ4waWrX6Xm&v3=0")
+    
+                });
+    
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    
+            if(typeof sessionStorage.getItem('uid') === 'object'){
+                location.href = '../sign_in/sign_in.html'
+            }
+    
+            if(sessionStorage.getItem('tried_Exp') == 0){
+                sessionStorage.removeItem("saved_countdown");
+                location.href = '../home_page/home.html'
+            }
+    
+            });
+    </script>
+</head>
+<body>
+    <nav role="navigation">
+        <div id="menuToggle">
+
+            <input type="checkbox" />
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <ul id="menu">
+                <div class="up_half">
+                    <h2>How to use this dashboard</h2>
+                </div>
+
+                <li>Use the Up and Down arrows in the control widget to control the position of the glass rods.
+                    You can do this multiple times to see the rod vanishing in the left beaker containing
+                    sunflower oil while it remains clearly visible in the right beaker containing water.</li>
+                <li>
+                    You can click the Recalibrate button to reset the setup to its default state.
+                    After you are done with the experiment, click the “Leave Session” button on the top-right
+                    corner to exit the session. This will redirect you to the home page.
+                </li><br/>
+                <strong>Note: There's a latency of about 5-10 seconds in video feed.</strong>
+            </ul>
+        </div>
+        <label id="inst">Instructions</label>
+    </nav>
+
+    <div class="range1">
+        <nav class="navbar">
+            <a id="focal_head" href="#focal">vanishing rod</a>
+            <a id="session" type="button" onclick='leave()'>Leave Session</a>
+            <a id="demo"></a>
+        </nav>
+        <div class="slidervalue1">
+            <span id="us">0</span>
+        </div>
+
+        <div class="field1">
+            <div class="value left">Up</div>
+            <input type="range" min="0" max="1" value="0" step="1" id="u">
+            <div class="value right">Down</div>
+            <div class="u_label" id="u_label" data-hover="Object"><span></span></div>
+        </div>
+        <button type="button" onclick='Down("u")' class="btn_plus" id="btn_plus1">▼</button>
+        <button type="button" onclick='Up("u")' class="btn_minus" id="btn_minus1">▲</button>
+        <button type="button" class="btn-1" onclick='myfunction()' id="bt1">Recalibrate</button>
+        <div class="stream">
+            <iframe id="str" class="live" width="640" height="360" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+    </div>
+    <script type="module" src="video.js"></script>
+</body>
+
+</html>
