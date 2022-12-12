@@ -121,8 +121,8 @@ function increment(ID) {
     const cur = document.getElementById(ID);
     var v1 = cur.value;
     v1 = (Number(v1) + Number(cur.step));
-    if (Number(v1) > 1) {
-        v1 = 1;
+    if (Number(v1) > 9600) {
+        v1 = 9600;
     }
    
     cur.value = v1;
@@ -146,24 +146,6 @@ function decrement(ID) {
     sessionStorage.setItem('saved_val_u', v1);
     // if(curr_state != 1){
     fetch("https://blr1.blynk.cloud/external/api/update?token=xhn8z8fVu6weEbbHIgVNjmQ4waWrX6Xm&v1=" + v1)
-    //     curr_state = 1;
-    // }
-
-    // let response=fetch("https://blr1.blynk.cloud/external/api/get?token=xhn8z8fVu6weEbbHIgVNjmQ4waWrX6Xm&v1")
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         const myJSON = JSON.stringify(data)
-    //         console.log(response);
-    //         console.log(myJSON);
-    //         console.log(typeof(myJSON));
-
-    //         if(myJSON=="1"){
-    //         }else if(myJSON=="0"){
-    //             //console.log("bye");
-    //             fetch("https://blr1.blynk.cloud/external/api/update?token=xhn8z8fVu6weEbbHIgVNjmQ4waWrX6Xm&v1=1")
-    //             document.getElementById(ID + "s").innerHTML = 1;
-    //         }
-    //     });
 }
 
 function leave(){

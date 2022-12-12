@@ -161,14 +161,12 @@
   }
   
   .range1 .slidervalue1{
-    display: none;
     position: relative;
-    width: 100%;
+    width: 105%;
     height: 0%;
   }
   
   .range1 .slidervalue1 span{
-    display: none;
     font-size: 35px;
     position: absolute;
     height: 80px;
@@ -182,10 +180,11 @@
     line-height: 75px;
     z-index: 2;
     box-shadow: 5px 10px 10px rgba(0,0,0,0.1);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
   }
   
   .range1 .slidervalue1 label{
-    display: none;
     font-size: 25px;
     position: absolute;
     height: 80px;
@@ -249,7 +248,7 @@
     font-size: 25px;
     position: absolute;
     height: 80px;
-    width: 150px;
+    width: 300px;
   
     border-radius: 20px;
   
@@ -266,16 +265,52 @@
   }
 
   #u_label::after{
-    content: "Direction:";
+    content: "Resistor Value (in Ohms)";
   }
   
   #u_label:hover::after{
     content: "D";
   }
   
-  
-  .range1 .stream{
+  .float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+  }
+
+  .float-child {
+      width: 50%;
+      float: left;
+      padding: 20px;
+      border: 2px solid red;
+  } 
+
+  .range1 .stream-container{
     position: relative;
+    outline:none;
+    top:-630px;
+    right: 600px;
+    height: 400px;
+    width: 78vw;
+    border: 0;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 10;
+    padding: 16px 20px;
+    border-radius: 20px;
+    background: #fff;
+    color: #664AFF;
+    box-shadow: 5px 10px 10px rgba(0,0,0,0.1);
+    z-index: 2;
+  }
+
+  .range1 .stream-child{
+    width: 49%;
+    padding: 0px;
+  
+  }
+
+  .range1 .stream{
+    position:relative;
     outline: none;
     top: -650px;
     right: 140px;
