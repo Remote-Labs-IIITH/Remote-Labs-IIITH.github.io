@@ -162,7 +162,7 @@
   
   .range1 .slidervalue1{
     position: relative;
-    width: 105%;
+    width: 115%;
     height: 0%;
   }
   
@@ -170,7 +170,7 @@
     font-size: 35px;
     position: absolute;
     height: 80px;
-    width: 90px;
+    width: 120px;
   
     background-color: #fff;
     color: #664AFF;

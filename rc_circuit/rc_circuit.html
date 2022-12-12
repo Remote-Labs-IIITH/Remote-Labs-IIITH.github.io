@@ -93,8 +93,8 @@
 
         <div class="field1">
             <div class="value left">0</div>
-            <input type="range" min="0" max="9600" value="0.0" style="width: 160px;" step="75" id="u">
-            <div class="value right">9600</div>
+            <input type="range" min="0" max="9675" value="0.0" style="width: 160px;" step="75" id="u">
+            <div class="value right">9675</div>
             <div class="u_label" id="u_label" data-hover="Object"><span></span></div>
         </div>
         <button type="button" onclick='increment("u")' class="btn_plus" id="btn_plus1">+</button>
@@ -108,9 +108,12 @@
             </div>
             
             <div class="stream-child" style="float: right">
-                <iframe id="str" class="live" width="640" height="360" title="YouTube video player" frameborder="0"
+                <!-- <iframe id="str" class="live" width="640" height="360" title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube.com/embed/jfKfPfyJRdk"
-                allowfullscreen></iframe>
+                allowfullscreen></iframe> -->
+                <div style="height:400px; width:730px" >
+                    <canvas id="myChart"></canvas>
+                </div>
             </div>
             
           </div>
