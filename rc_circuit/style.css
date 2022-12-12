@@ -88,6 +88,38 @@
     padding: 0 65px 0 45px;
     box-shadow: 5px 10px 10px rgba(0,0,0,0.1);
   }
+
+  .charge{
+    position: absolute;
+    outline: none;
+    border: 0;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1;
+    padding: 16px 30px;
+    border-radius: 20px;
+    background: #fff;
+    color: #664AFF;
+    box-shadow: 5px 10px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    height: 80px;
+    width: 350px;
+    align-items: center;
+    justify-content: center;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 40%;
+
+  }
+
+  .charge:hover{
+    background: #664AFF;
+    color: #fff;
+  }
   
   .btn-1{
     position: relative;
@@ -238,7 +270,7 @@
   .range1 .field1 input{
     -webkit-appearance: none;
     height: 3px;
-    width: 100px;
+    width: px;
     background: #ddd;
     outline: none;
     border: none
@@ -288,9 +320,9 @@
     position: relative;
     outline:none;
     top:-630px;
-    right: 600px;
+    right: 780px;
     height: 400px;
-    width: 78vw;
+    width: 100vw;
     border: 0;
     font-size: 30px;
     font-weight: bold;
@@ -304,7 +336,7 @@
   }
 
   .range1 .stream-child{
-    width: 49%;
+    width: 33%;
     padding: 0px;
   
   }
@@ -540,4 +572,36 @@
     height: 100px;
     margin: 0 0 0 -50px;
     background: linear-gradient(to bottom left, var(--primary) 10%, var(--secondary) 115%);;
+  }
+
+  .cktimage{
+    background-repeat: no-repeat; 
+    width:380px;
+    height: 20px;
+    top: -1000px
+  }
+
+  .titlecon {
+    padding: 0 15% 0 15%;
+    text-align: center;
+    display: flex;
+  }
+  
+  
+  .home-img-1 {
+    border-radius: 10px;
+    height: 500px;
+    width: 600px
+  }
+  
+  .explore-store {
+    font-family: "Montserrat";
+    position: absolute;
+    z-index: 1;
+    transform: translate(300px, 200px);
+    margin-right: 3.5%;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
   }

@@ -101,55 +101,47 @@
         <button type="button" onclick='decrement("u")' class="btn_minus" id="btn_minus1">-</button>
 
         <div class="stream-container">
-            <div class="stream-child" style="float: left">
+            <div class="stream-child" style="float: left; width:40%">
                 <iframe id="str" class="live" width="640" height="360" title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube.com/embed/jfKfPfyJRdk"
                     allowfullscreen></iframe>
             </div>
             
-            <div class="stream-child" style="float: right">
-                <!-- <iframe id="str" class="live" width="640" height="360" title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube.com/embed/jfKfPfyJRdk"
-                allowfullscreen></iframe> -->
+            <div class="stream-child" style="float: right; width:40%">
                 <div style="height:400px; width:730px" >
                     <canvas id="myChart"></canvas>
                 </div>
             </div>
-            
-        </div>
-        <div>
-            <table
-              style="
-                background-image: url(./rccktdiagram.png);
-                width: 400px;
-                height: 580px;
-                background-repeat: no-repeat;
-                margin: auto;
-              "
-            >
-              <tr>
-                <td>
+            <div>
+                <img src="./rccktdiagram.png" style="height:385px; width:15%">
+                <!-- <table class=cktimage style="background-image: url(./rccktdiagram.png);">
+                  <tr>
+                    <td>
+                      <input
+                        type="text"
+                        id="field1_input"
+                        style="width: 100px; margin-bottom: 180px; margin-left: 60px"
+                        placeholder="Resistance"
+                      />
+                      Ω
+                    </td>
+                  </tr>
+                </table>
+                <div style="text-align: center">
                   <input
-                    type="text"
-                    id="field1_input"
-                    style="width: 100px; margin-bottom: 180px; margin-left: 60px"
-                    placeholder="Resistance"
+                    type="button"
+                    value="Start Charging"
+                    id="btnRun"
+                    onclick="publishValues();"
                   />
-                  Ω
-                </td>
-              </tr>
-            </table>
-            <div style="text-align: center">
-              <input
-                type="button"
-                value="Start Charging"
-                id="btnRun"
-                onclick="publishValues();"
-              />
-            </div>
-          </div>
+                </div>
+              </div> -->
+        </div>
     </div>
-    
+
+    </div>
+    <div class="ctrls">
+        <button type="button" class="charge">Start Charging</button>
     </div>
     <script type="module" src="video.js"></script>
     <script>
