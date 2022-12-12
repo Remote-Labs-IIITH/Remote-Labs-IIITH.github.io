@@ -116,8 +116,40 @@
                 </div>
             </div>
             
+        </div>
+        <div>
+            <table
+              style="
+                background-image: url(./rccktdiagram.png);
+                width: 400px;
+                height: 580px;
+                background-repeat: no-repeat;
+                margin: auto;
+              "
+            >
+              <tr>
+                <td>
+                  <input
+                    type="text"
+                    id="field1_input"
+                    style="width: 100px; margin-bottom: 180px; margin-left: 60px"
+                    placeholder="Resistance"
+                  />
+                  Ω
+                </td>
+              </tr>
+            </table>
+            <div style="text-align: center">
+              <input
+                type="button"
+                value="Start Charging"
+                id="btnRun"
+                onclick="publishValues();"
+              />
+            </div>
           </div>
     </div>
+    
     </div>
     <script type="module" src="video.js"></script>
     <script>
