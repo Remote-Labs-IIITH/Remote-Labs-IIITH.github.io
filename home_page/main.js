@@ -21,6 +21,15 @@ function young_theory(){
   location.href='../young/theory.html';
 }
 
+function rc_theory(){
+  location.href='../rc_circuit/theory.html';
+}
+
+function rc_exp(){
+  sessionStorage.setItem('triedExp',1);
+  location.href='../rc_circuit/rc_circuit.html';
+}
+
 function pendulum_exp(){
   fetch('https://blr1.blynk.cloud/external/api/isHardwareConnected?token=ePUMpo-rDkt1peBekOxcVgQpW9zebvfL')
     .then(response => response.json())
