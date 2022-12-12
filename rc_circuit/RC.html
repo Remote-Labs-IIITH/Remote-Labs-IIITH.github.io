@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div>
+      <table
+        style="
+          background-image: url(./rccktdiagram.png);
+          width: 400px;
+          height: 580px;
+          background-repeat: no-repeat;
+          margin: auto;
+        "
+      >
+        <tr>
+          <td>
+            <input
+              type="text"
+              id="field1_input"
+              style="width: 100px; margin-bottom: 180px; margin-left: 60px"
+              placeholder="Resistance"
+            />
+            Ω
+          </td>
+        </tr>
+      </table>
+      <div style="text-align: center">
+        <input
+          type="button"
+          value="Start Charging"
+          id="btnRun"
+          onclick="publishValues();"
+        />
+      </div>
+    </div>
+    <div style="margin: 15vh">
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <script>
+      let jsonmsg = null;
+      let mychart = null;
+      let voltages = [];
+      let timestamps = [];
+      const url = "wss://mqtt3.thingspeak.com/mqtt";
+      const options = {
+        clean: true,
+        connectionTimeout: 1000,
+        clientId: "CDguECgCMTQVGA8fHi8vJCk",
+        username: "CDguECgCMTQVGA8fHi8vJCk",
+        password: "+RR+XbzGRuObHbYFX2fdSDP1",
+      };
+
+      const client = mqtt.connect(url, options);
+      client.on("connect", function () {
+        console.log("Connected");
+        client.subscribe("channels/1970787/subscribe");
+      });
+
+      client.on("message", function (topic, message) {
+        jsonmsg = JSON.parse(message);
+        if (jsonmsg["field3"] != null) voltages = jsonmsg["field3"].split(" ");
+        if (jsonmsg["field4"] != null)
+          timestamps = jsonmsg["field4"].split(" ");
+        for (let i = 0; i < voltages.length; i++) {
+          voltages[i] = parseFloat(voltages[i]);
+          timestamps[i] = parseFloat(timestamps[i]);
+        }
+        console.log(message.toString());
+        mychart.destroy();
+        mychart = new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: timestamps,
+            datasets: [
+              {
+                label: "Voltage Across Capacitor",
+                data: voltages,
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
+            },
+          },
+        });
+      });
+
+      function publishValues() {
+        let resistance = parseFloat(
+          document.getElementById("field1_input").value
+        );
+        let wiper_val = Math.floor(127 - (resistance - 75) / 76.19);
+        if (isNaN(wiper_val)) {
+          alert("Please enter a resistance value to proceed");
+          return;
+        }
+        if (wiper_val > 127 || wiper_val < 0) {
+          alert("Invalid Resistance Value: Resitance can only be upto 9675 Ω");
+          return;
+        }
+        let msg = {
+          field1: wiper_val,
+          field2: 1,
+        };
+        msg_string = JSON.stringify(msg);
+        console.log(msg_string);
+        client.publish("channels/1970787/subscribe", msg_string);
+
+        console.log(
+          "field1 value = " + document.getElementById("field1_input").value
+        );
+        console.log("field2 value = " + 1);
+      }
+
+      const ctx = document.getElementById("myChart");
+      mychart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: timestamps,
+          datasets: [
+            {
+              label: "Voltage Across Capacitor",
+              data: voltages,
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
