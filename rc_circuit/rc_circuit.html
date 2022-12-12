@@ -17,7 +17,7 @@
 		@import url('https://fonts.googleapis.com/css2?family=The+Nautigal:wght@400;700&display=swap');
 		@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Raleway:wght@100;200&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
 	</style>
-    <script>
+    <!-- <script>
         jQuery(document).ready(function ($) {
     
             if (window.history && window.history.pushState) {
@@ -34,7 +34,7 @@
     
             }
         });
-    </script>
+    </script> -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
     
@@ -87,7 +87,7 @@
         </nav>
 
         <div class="slidervalue1">
-            <span id="us">0</span>
+            <span id="field1_input">0</span>
             <label>Ohms</label>
         </div>
 
@@ -114,36 +114,16 @@
             </div>
             <div style="height:500px">
                 <img src="./rccktdiagram.png" style="height:385px; width:15%">
-                <button ></button>
-                <!-- <table class=cktimage style="background-image: url(./rccktdiagram.png);">
-                  <tr>
-                    <td>
-                      <input
-                        type="text"
-                        id="field1_input"
-                        style="width: 100px; margin-bottom: 180px; margin-left: 60px"
-                        placeholder="Resistance"
-                      />
-                      Ω
-                    </td>
-                  </tr>
-                </table>
-                <div style="text-align: center">
-                  <input
-                    type="button"
-                    value="Start Charging"
-                    id="btnRun"
-                    onclick="publishValues();"
-                  />
-                </div>
-              </div> -->
+                <button class="var_res">Variable resistance</button>
+            </div>
         </div>
     </div>
 
     </div>
     <div class="ctrls">
-        <button type="button" class="charge">Start Charging</button>
+        <button type="button" class="charge" onclick="publishValues()">Start Charging</button>
     </div>
+
     <script type="module" src="video.js"></script>
     <script>
       let jsonmsg = null;
@@ -200,7 +180,7 @@
 
       function publishValues() {
         let resistance = parseFloat(
-          document.getElementById("field1_input").value
+          Number(document.getElementById("field1_input").innerHTML)
         );
         let wiper_val = Math.floor(127 - (resistance - 75) / 76.19);
         if (isNaN(wiper_val)) {

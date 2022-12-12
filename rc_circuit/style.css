@@ -89,6 +89,19 @@
     box-shadow: 5px 10px 10px rgba(0,0,0,0.1);
   }
 
+  .var_res{
+    position:absolute; 
+    top:95px; 
+    right:960px;
+    outline:none;
+    border-radius: 20px;
+    background: #fff;
+    color: #664AFF;
+    /* box-shadow: 5px 10px 10px rgba(0,0,0,0.1); */
+    border:0;
+    font-size: 16px;
+  }
+
   .charge{
     position: absolute;
     outline: none;
