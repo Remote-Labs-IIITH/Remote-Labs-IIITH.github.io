@@ -1,9 +1,5 @@
 var saved_u_val;
 
-inputslider_u.onmouseup = () => {
-    document.getElementById("field1_input").innerHTML = document.getElementById("u").value;
-}
-
 document.addEventListener('DOMContentLoaded', () => {
 
     if(typeof sessionStorage.getItem('uid') === 'object'){
@@ -21,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         saved_u_val = 0;
         sessionStorage.setItem('saved_val_u', saved_u_val);
     }
-    document.querySelector("#us").innerHTML = saved_u_val;
+    document.querySelector("#field1_input").innerHTML = saved_u_val;
     document.querySelector("#u").value = saved_u_val;
 
     const inputslider_u = document.querySelector("#u");
@@ -34,6 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+// inputslider_u.onmouseup = () => {
+//     document.getElementById("field1_input").innerHTML = document.querySelector("#u").value;
+//     console.log("Chutiya hai kya");
+// }
 
 function increment(ID) {
     const cur = document.getElementById(ID);
