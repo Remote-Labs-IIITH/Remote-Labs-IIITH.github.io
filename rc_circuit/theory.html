@@ -34,16 +34,16 @@
                     </div>
                     <div class="card__body">
                         <h3>Aim</h3>
-                        <p>The aim of this experiment is to observe the interference of two light waves.</p><br />
-                        <h3>Apparatus</h3>
+                        <p>To study the step response of a series RC circuit</p><br />
+                        <!-- <h3>Apparatus</h3>
                         <p><li>Laser</li>
                         <li>Slit Film</li>
                             <li>Screen</li>
-                        </p><br />
+                        </p><br /> -->
                        
                         <h3>Physics of the Experiment</h3>
-                        <p>The main physics behind the experiment can be summarized as:
-                        <ul><br />
+                        <p>The main physics behind the experiment can be given as:
+                        <!-- <ul><br />
                             <li>Young’s double-slit experiment uses two coherent sources of light placed at a small distance apart, usually, only a few orders of magnitude greater than the wavelength of light is used.</li>
                             <li>Young’s double-slit experiment helped in understanding the wave theory of light.</li>
                             <li>A screen or photodetector is placed at a large distance ’D’ away from the slits.</li>
@@ -58,10 +58,38 @@
                             </li></br>
                                     Here d is the distance between the slits.
                                     λ is the wavelength of the light waves.
+                        </ul> -->
+                        <ul><br />
+                            <li>Consider a series RC circuit shown in Fig. (1). Capacitor (C) is uncharged initially and at t= 0, it starts getting charged through resistor (R) when switch (K) is thrown on position 'a'.</li>
+                            <li>Let us analyze the charging of capacitor using node analysis method-
+                                At node 1 assuming instantaneous voltage across capacitor to be 'Vc' volts.</li>
+                            <p><img src="theory_images/image001.png" alt="f1"></p>
+                            <p><img src="theory_images/image003.png" alt="f3"></p>
+
                         </ul>
+                        <p><strong>THEORY:</strong></p>
+                            <p>&nbsp;</p>
+                            <p><img src="theory_images/image001.png" alt="f1"></p>
+                            <p><img src="theory_images/image003.png" alt="f3"></p>
+                            <p>This is of the form-</p>
+                            <p><img src="theory_images/image004.png" alt="f4"></p>
+                            <p>Where P = <img src="theory_images/image005.png" style="vertical-align:middle" alt="f5"></p>
+                            <p>and Q = <img src="theory_images/image006.png" style="vertical-align:middle" alt="f6"></p>
+                            <p>Solution of which is</p>
+                            <p><img src="theory_images/image007.png" alt="f7"></p>
+                            <p>K is constant of integration</p>
+                            <p><img src="theory_images/image008.png" alt="f8"></p>
+                            <p>At t=0, Vc(t) =0 (Since capacitor
+                            is uncharged initially)<br>K= <sup>-</sup><img src="theory_images/image009.png"  style="vertical-align:middle" alt="f9"></p>
+                            <p>Hence</p>
+                            <p><img src="theory_images/image010.png" alt="f10"></p>
+                            <p>At t=RC (when the power of exponent becomes unity)</p>
+                            <p>Vc(t) = <img src="theory_images/image009.png" style="vertical-align:middle" alt="f9"> * (1-0.368)
+                                = 0.632 * <img src="theory_images/image009.png"  style="vertical-align:middle" alt="f9"></p>
+                            <p>At t= RC capacitor gets charged to 63.2%of final voltage. Therefore RC is called time constant and nominated by Г .It is defined as time at which response reaches 63.2% of its final value. The graphical representation of charging of capacitor with time is shown in Fig. (2) at steady state charging current for capacitor through resistance reaches zero and capacitor gets charged fully at supply voltage <img src="theory_images/image009.png" style="vertical-align:middle" alt="f9">volts. 
                         </p>
                     </br>
-                      <img src="../home_page/yds.jpeg" class="center">
+                      <img src="./theory_rc.jpeg" class="center">
                     </div>
                 </div>
             </div>
