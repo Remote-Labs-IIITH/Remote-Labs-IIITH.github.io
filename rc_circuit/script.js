@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     saved_u_val = sessionStorage.getItem('saved_val_u');
 
     if(saved_u_val == null){
-        saved_u_val = 0;
+        saved_u_val = 75;
         sessionStorage.setItem('saved_val_u', saved_u_val);
     }
     document.querySelector("#field1_input").innerHTML = saved_u_val;
@@ -55,8 +55,8 @@ function decrement(ID) {
     const cur = document.getElementById(ID);
     var v1 = cur.value;
     v1 = (Number(v1) - Number(cur.step));
-    if (Number(v1) < 0) {
-        v1 = 0;
+    if (Number(v1) < 75) {
+        v1 = 75;
     }
     cur.value = v1;
     document.getElementById("field1_input").innerHTML = v1;

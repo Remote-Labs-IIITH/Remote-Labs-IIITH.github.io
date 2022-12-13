@@ -97,8 +97,8 @@
         </div>
 
         <div class="field1">
-            <div class="value left">0</div>
-            <input type="range" min="0" max="9675" value="0.0" style="width: 160px;" step="75" id="u">
+            <div class="value left">75</div>
+            <input type="range" min="75" max="9675" value="0.0" style="width: 160px;" step="75" id="u">
             <div class="value right">9675</div>
             <div class="u_label" id="u_label" data-hover="Object"><span></span></div>
         </div>
@@ -184,6 +184,7 @@
       });
 
       function publishValues() {
+        mychart.destroy();
         let resistance = parseFloat(
           Number(document.getElementById("field1_input").innerHTML)
         );
