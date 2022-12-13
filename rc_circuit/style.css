@@ -314,7 +314,7 @@
   }
   
   #u_label:hover::after{
-    content: "D";
+    content: "R (in Ω)";
   }
   
   .float-container {
