@@ -183,6 +183,7 @@
           Number(document.getElementById("field1_input").innerHTML)
         );
         let wiper_val = Math.floor(127 - (resistance - 75) / 76.19);
+        console.log(wiper_val);
         if (isNaN(wiper_val)) {
           alert("Please enter a resistance value to proceed");
           return;
@@ -200,7 +201,7 @@
         client.publish("channels/1970787/subscribe", msg_string);
 
         console.log(
-          "field1 value = " + document.getElementById("field1_input").value
+          "field1 value = " + Number(document.getElementById("field1_input").innerHTML)
         );
         console.log("field2 value = " + 1);
       }
