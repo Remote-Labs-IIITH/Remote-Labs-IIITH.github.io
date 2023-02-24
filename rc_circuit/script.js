@@ -40,8 +40,8 @@ function increment(ID) {
     const cur = document.getElementById(ID);
     var v1 = cur.value;
     v1 = (Number(v1) + Number(cur.step));
-    if (Number(v1) > 9675) {
-        v1 = 9675;
+    if (Number(v1) > 3000) {
+        v1 = 3000;
     }
    
     cur.value = v1;
