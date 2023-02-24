@@ -184,7 +184,9 @@
       });
 
       function publishValues() {
-        mychart.destroy();
+        // mychart.destroy();
+        voltages = [];
+        timestamps = [];
         let resistance = parseFloat(
           Number(document.getElementById("field1_input").innerHTML)
         );
