@@ -68,6 +68,21 @@ function decrement(ID) {
     fetch("https://blr1.blynk.cloud/external/api/update?token=ilEv4NM3BlZSMolddR7EsuurFMx6DR5a&v4=" + v1)
 }
 
+function reload_plot() {
+    fetch("https://blr1.blynk.cloud/external/api/update?token=ilEv4NM3BlZSMolddR7EsuurFMx6DR5a&v7=1")
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        console.log(data);
+    })
+    alert("Processing... Please wait for 3-5 seconds");
+    setTimeout(function() {
+        var iframe = document.getElementById('str');
+        iframe.src = iframe.src;
+    }, 5000);
+}
+
 function leave(){
     sessionStorage.removeItem("saved_countdown");
     sessionStorage.removeItem("saved_val_v");
