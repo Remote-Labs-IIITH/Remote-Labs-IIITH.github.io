@@ -30,6 +30,14 @@ function rc_exp(){
   location.href='../rc_circuit/rc_circuit.html';
 }
 
+function kvl_theory(){
+  location.href='../kvl/theory.html';
+}
+
+function kvl_exp(){
+  location.href='../kvl/kvl.html';
+}
+
 function pendulum_exp(){
   fetch('https://blr1.blynk.cloud/external/api/isHardwareConnected?token=ePUMpo-rDkt1peBekOxcVgQpW9zebvfL')
     .then(response => response.json())

@@ -21,7 +21,7 @@
    
 
     <nav class="navbar">
-        <a id="focal_head" href="#focal">Remote Triggered Lab</a>
+        <a id="focal_head" href="#focal">Remote Labs</a>
         <button id="Leave_Queue" onclick="return_home()">Back to Home</button>
     </nav>
 
@@ -34,7 +34,7 @@
                     </div>
                     <div class="card__body">
                         <h3>Aim</h3>
-                        <p>The aim of this experiment is to observe the interference of two light waves.</p><br />
+                        <p>The aim of this experiment is to estimate the width of a wire by analyzing the diffraction pattern generated from it.</p><br />
                         <h3>Apparatus</h3>
                         <p><li>Laser</li>
                         <li>Slit Film</li>
@@ -45,23 +45,21 @@
                         <p>The main physics behind the experiment can be summarized as:
                         <ul><br />
                             <li>Young’s double-slit experiment uses two coherent sources of light placed at a small distance apart, usually, only a few orders of magnitude greater than the wavelength of light is used.</li>
-                            <li>Young’s double-slit experiment helped in understanding the wave theory of light.</li>
-                            <li>A screen or photodetector is placed at a large distance ’D’ away from the slits.</li>
+                            <li>Two coherent light sources can be created by splitting the single light source in two with the help of a thin wire</li>
+                            <li>Since the wire acts as the slit separator, it's width is an important factor which determines the spread of the diffraction pattern.</li>
+                            <li>The width of the wire can then be estimated using the formula described below.</li>
                             <li>The original Young’s double-slit experiment used diffracted light from a single source passed into two more slits to be used as coherent sources. 
                                 Lasers are commonly used as coherent sources in the modern-day experiments.</li>
                             </br>
                             <h3>Formulas Used</h3>
-                                <li>For constructive interference
-                                    dsinθ = mλ , for m = 0,1,-1,2,-2</li>   
-                                <li>For destructive interference
-                                    dsinθ = (m+½)λ, for m = 0,1,-1,2,-2
-                            </li></br>
-                                    Here d is the distance between the slits.
-                                    λ is the wavelength of the light waves.
+                                <li>y_m = m * (D * λ / wire_width)</li>   
+                                <li>here y_m is the position of the m-th minima (m-th dark fringe) from the central maxima (brightest fringe at the centre of the pattern).</li>
+                                <li>D is the separation of the slit from the Screen, wire_width is the estimated width of the wire. λ is the wavelength of the light source.</li>
+                                <li>m is an integer</li>
                         </ul>
                         </p>
                     </br>
-                      <img src="../home_page/yds.jpeg" class="center">
+                      <img src="./theory.png" class="center">
                     </div>
                 </div>
             </div>
