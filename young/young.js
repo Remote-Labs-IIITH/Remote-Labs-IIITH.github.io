@@ -88,7 +88,7 @@ function leave(){
     sessionStorage.removeItem("saved_val_v");
     sessionStorage.removeItem("saved_val_u");
     fetch("https://blr1.blynk.cloud/external/api/update?token=ilEv4NM3BlZSMolddR7EsuurFMx6DR5a&v6=" + UserVR1)
-    fetch("https://blr1.blynk.cloud/external/api/update?token=ilEv4NM3BlZSMolddR7EsuurFMx6DR5a&v4=0")
+    fetch("https://blr1.blynk.cloud/external/api/update?token=ilEv4NM3BlZSMolddR7EsuurFMx6DR5a&v4=10")
     fetch("https://blr1.blynk.cloud/external/api/update?token=ilEv4NM3BlZSMolddR7EsuurFMx6DR5a&v5=0")
         .then(() => {
             location.replace("../home_page/home.html")
