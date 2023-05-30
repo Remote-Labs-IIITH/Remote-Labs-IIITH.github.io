@@ -78,8 +78,8 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    top: 700px;
-    right: 30px;
+    top: 720px;
+    right: 400px;
     height: 80px;
     width: 380px;
     background: #fff;
@@ -322,7 +322,14 @@
   #u_label:hover::after{
     content: "D";
   } */
-  
+  .calculator {
+    position: relative;
+    outline: none;
+    top: -850px;
+    right: -700px;
+    height: 0px;
+    width: 0px;
+  }
   
   .range1 .stream{
     position: relative;
@@ -502,7 +509,7 @@
   #menu {
     position: absolute;
     width: 100vw;
-    height: 80vh;
+    height: 105vh;
     margin: 0px 0 0 -50px;
     padding: 50px;
     padding-top: 125px;
