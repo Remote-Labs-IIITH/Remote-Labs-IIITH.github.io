@@ -129,7 +129,7 @@ function increment(ID) {
 
     console.log(String.fromCharCode(ID.charCodeAt(0) - 68));
     sessionStorage.setItem('saved_val_u', v1);
-    fetch("https://blr1.blynk.cloud/external/api/update?token=dNAlYuQN6r6pEX2Fn5jX9vNd29KJLjvS&v5=" + v1)
+    fetch("https://blr1.blynk.cloud/external/api/update?token=dNAlYuQN6r6pEX2Fn5jX9vNd29KJLjvS&v1=" + v1)
 }
 
 function decrement(ID) {
@@ -144,7 +144,7 @@ function decrement(ID) {
     // console.log(String.fromCharCode(ID.charCodeAt(0) - 68));
     sessionStorage.setItem('saved_val_u', v1);
     // if(curr_state != 1){
-    fetch("https://blr1.blynk.cloud/external/api/update?token=dNAlYuQN6r6pEX2Fn5jX9vNd29KJLjvS&v5=" + v1)
+    fetch("https://blr1.blynk.cloud/external/api/update?token=dNAlYuQN6r6pEX2Fn5jX9vNd29KJLjvS&v1=" + v1)
     //     curr_state = 1;
     // }
 
@@ -180,6 +180,7 @@ function leave() {
 function return_home() {
     location.href = '../home_page/home.html'
 }
+
 
 window.addEventListener('beforeunload', () => {
     fetch("https://blr1.blynk.cloud/external/api/update?token=PjC1-u_h-OBVRuKZFKf0cQ2XVuYI_V6o&v0=" + "1")
