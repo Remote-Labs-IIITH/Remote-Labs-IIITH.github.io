@@ -8,7 +8,7 @@ function myfunction() {
 
 function myTimer() {
     //document.querySelector('form').onsubmit = function () {
-    fetch('https://blr1.blynk.cloud/external/api/get?token=PjC1-u_h-OBVRuKZFKf0cQ2XVuYI_V6o&v0')
+    fetch('https://blr1.blynk.cloud/external/api/get?token=PjC1-u_h-OBVRuKZFKf0cQ2XVuYI_V6o&v1')
         .then(response => response.json())
         .then(data => {
             const myJSON = JSON.stringify(data)
@@ -102,7 +102,7 @@ function increment(ID) {
     document.getElementById(ID + "s").innerHTML = v1;
     // console.log(String.fromCharCode(ID.charCodeAt(0) - 68));
     sessionStorage.setItem('saved_val_u', v1);
-    fetch("https://blr1.blynk.cloud/external/api/update?token=PjC1-u_h-OBVRuKZFKf0cQ2XVuYI_V6o&v5=" + v1)
+    fetch("https://blr1.blynk.cloud/external/api/update?token=PjC1-u_h-OBVRuKZFKf0cQ2XVuYI_V6o&v1=" + v1)
 }
 
 function decrement(ID) {
@@ -124,8 +124,8 @@ function leave() {
     sessionStorage.removeItem("saved_val_v");
     sessionStorage.removeItem("saved_val_u");
     fetch("https://blr1.blynk.cloud/external/api/update?token=PjC1-u_h-OBVRuKZFKf0cQ2XVuYI_V6o&v5=" + UserVR1)
-    fetch("https://blr1.blynk.cloud/external/api/update?token=PjC1-u_h-OBVRuKZFKf0cQ2XVuYI_V6o&v0=" + "1")
     fetch("https://blr1.blynk.cloud/external/api/update?token=PjC1-u_h-OBVRuKZFKf0cQ2XVuYI_V6o&v3=0")
+    fetch("https://blr1.blynk.cloud/external/api/update?token=PjC1-u_h-OBVRuKZFKf0cQ2XVuYI_V6o&v1=0")
         .then(() => {
             location.replace("../home_page/home.html")
         })
@@ -136,6 +136,6 @@ function return_home() {
 }
 
 window.addEventListener('beforeunload', () => {
-    fetch("https://blr1.blynk.cloud/external/api/update?token=dNAlYuQN6r6pEX2Fn5jX9vNd29KJLjvS" + "1")
+    fetch("https://blr1.blynk.cloud/external/api/update?token=dNAlYuQN6r6pEX2Fn5jX9vNd29KJLjvS&v0=" + "1")
     fetch('https://blr1.blynk.cloud/external/api/update?token=dNAlYuQN6r6pEX2Fn5jX9vNd29KJLjvS&v3=0')
 })
